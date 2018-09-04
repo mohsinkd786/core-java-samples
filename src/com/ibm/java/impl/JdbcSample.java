@@ -1,23 +1,20 @@
 package com.ibm.java.impl;
 
-import java.sql.SQLException;
-
 import com.ibm.java.EmployController;
 import com.ibm.java.beans.Employ;
-import com.ibm.java.dao.CallableDAO;
-import com.ibm.java.dao.Dao;
 
 public class JdbcSample {
 
 	public static void main(String[] args) {
-		CallableDAO dao = new CallableDAO();
-		try {
-			System.out.println("SUM is " + dao.calculate(55, 13));
-			System.out.println("Factorial of 5 is " + dao.factorial(5, "while"));
+		executeEmploy();
 
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+		/*
+		 * CallableDAO dao = new CallableDAO(); try { System.out.println("SUM is " +
+		 * dao.calculate(55, 13)); System.out.println("Factorial of 5 is " +
+		 * dao.factorial(5, "while"));
+		 * 
+		 * } catch (SQLException e) { e.printStackTrace(); }
+		 */
 		/*
 		 * try {
 		 * 
@@ -38,8 +35,8 @@ public class JdbcSample {
 		// fetch one record
 		// System.out.println(control.fetchOne(3));
 		// add record
-		Employ emp = new Employ(12, "Ram Lal", "ram@gmail.com", 1, 99100);
-		control.updateOne(emp);
+		Employ emp = new Employ(15, "Bagheera", "bag@yahoo.com", 2, 453000);
+		control.employTransact(emp);
 		control.fetchAll().stream().forEach(System.out::println);
 
 	}

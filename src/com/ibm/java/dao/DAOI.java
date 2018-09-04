@@ -14,4 +14,6 @@ public interface DAOI {
 	void add(Employ t) throws SQLException;
 
 	void updateOne(Employ t) throws SQLException;
+
+	void employTransact(Employ t) throws SQLException;
 }

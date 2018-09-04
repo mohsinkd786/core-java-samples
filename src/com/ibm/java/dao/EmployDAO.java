@@ -60,4 +60,24 @@ public class EmployDAO implements DAOI {
 		statement.setInt(5, t.getId());
 		statement.executeUpdate();
 	}
+
+	@Override
+	public void employTransact(Employ t) throws SQLException {
+		String query = "INSERT INTO employs(emp_id,name,email,p_id,salary) VALUES(?,?,?,?,?)";
+		java.sql.Connection conn = Connection.conn;
+		conn.setAutoCommit(false);
+
+		// Savepoint sav = conn.setSavepoint("begin_trans");
+
+		PreparedStatement statement = conn.prepareStatement(query);
+		statement.setInt(1, t.getId());
+		statement.setString(2, t.getName());
+		statement.setString(3, t.getEmail());
+		statement.setInt(4, t.getP_id());
+		statement.setInt(5, t.getSalary());
+
+		statement.executeUpdate();
+		conn.commit();
+		// conn.rollback(sav);
+	}
 }

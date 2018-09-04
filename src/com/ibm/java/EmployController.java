@@ -49,4 +49,12 @@ public class EmployController {
 			e.printStackTrace();
 		}
 	}
+
+	public void employTransact(Employ t) {
+		try {
+			service.employTransact(t);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 }

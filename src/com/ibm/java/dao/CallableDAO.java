@@ -19,6 +19,7 @@ public class CallableDAO {
 	public int factorial(int number, String typeOfIterator) throws SQLException {
 		String query = "{ ?= call factorial(?,?) }";
 		CallableStatement call = Connection.conn.prepareCall(query);
+		
 		call.setInt(2, number);
 		call.setString(3, typeOfIterator);
 		call.registerOutParameter(1, Types.INTEGER);

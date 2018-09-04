@@ -27,4 +27,8 @@ public class EmployService {
 	public void updateOne(Employ t) throws SQLException {
 		dao.updateOne(t);
 	}
+
+	public void employTransact(Employ t) throws SQLException {
+		dao.employTransact(t);
+	}
 }

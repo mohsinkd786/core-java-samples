@@ -2,8 +2,6 @@ package com.ibm.java.impl;
 
 import static java.lang.System.out;
 
-import java.util.List;
-
 import com.ibm.java.api.UserService;
 import com.ibm.java.beans.User;
 import com.ibm.java.enums.UserOperation;
